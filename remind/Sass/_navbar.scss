@@ -1,0 +1,59 @@
+@import "variabels";
+@import "mixins";
+
+
+header {
+  box-shadow: 0 0 0.4em #ccc;
+  padding: 0.2em 0;
+  background: $whiteOp;
+  backdrop-filter: blur(0.5em);
+  position: sticky; // remember to change with mainShowcase
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: 0.5s;
+  z-index: 100000;
+  &.sticky {
+    padding: 0;
+  }
+}
+
+nav {
+  @include Flex(space-between, center, row);
+  width: 100%;
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $theHeaderFont;
+    a {
+      font-size: 1.8em;
+    }
+    img {
+      width: 40px;
+      height: 40px;
+      margin-left: 10px;
+    }
+  }
+  a {
+    color: $black;
+  }
+  ul {
+    @include Flex(space-between, center, row);
+    li {
+      a {
+        display: inline-block;
+        margin: 0 0 0 0.5em;
+        padding: 0.9em;
+        font-family: $theFont;
+        font-weight: 500;
+        letter-spacing: 1px;
+        opacity: 0.6;
+        transition: 0.5;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

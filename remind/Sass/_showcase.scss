@@ -1,0 +1,53 @@
+@import "variabels";
+@import "mixins";
+
+.mainShowcase {
+  width: 100%;
+  height: 90vh; // remember to change with header
+  background-image: url("../img/showcase.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  position: relative;
+  @include Flex (center,center,column);
+  h2 {
+    color: $white;
+    font-size: 20em;
+    font-family: $theFont;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 5px $white;
+  }
+  div {
+    @include Flex (center,center,row);
+    p {
+      color: $white;
+      font-family: $theFont;
+      letter-spacing: 1px;
+      font-size: 2em;
+      margin-right: 1em;
+    }
+    a {
+      padding: 0.6em 2.5em;
+      background: $white;
+      border: none;
+      border-radius: 0.2em;
+      color: $black;
+      font-family: $theFont;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      animation: showcaseBtn 0.7s alternate infinite;
+    }
+    @keyframes showcaseBtn {
+      0% {
+        transform: translateY(-0.2em);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  }
+}

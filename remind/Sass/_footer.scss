@@ -1,0 +1,56 @@
+@import "variabels";
+@import "mixins";
+
+.mainFooter {
+  width: 100%;
+  background: $whiteDark;
+  @include Flex(center, center, column);
+  .footerContent {
+    @include Flex(space-between, center, row);
+    width: 100%;
+    padding: 2em 0;
+    .footerNav, .footerLearn {
+      @include Flex(center, center, column);
+      a {
+        color: $black;
+      }
+      .footNavHeader {
+        font-family: $theHeaderFont;
+      }
+      .footLearnHeader {
+        font-family: $theFont;
+      }
+      ul {
+        font-family: $theFont;
+        li {
+          margin: 1em 0;
+          a {
+            color: $black;
+            opacity: 0.5;
+            padding: 0.4em 0;
+            &:hover {
+              opacity: 1;
+            }
+            &.current {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  .bottomFooter {
+    width: 100%;
+    padding: 2em;
+    justify-self: flex-end;
+    @include Flex(center, center, row);
+    background: $grey;
+    color: $black;
+    border-top: 0.1em solid $black;
+    p {
+      font-family: $theFont;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+    }
+  }
+}

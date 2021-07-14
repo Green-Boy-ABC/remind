@@ -1,0 +1,151 @@
+@import "navbar";
+@import "variabels";
+@import "mixins";
+@import "showcase";
+@import "footer";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+// font-family: 'Yellowtail', cursive;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+// font-family: 'Roboto', sans-serif;
+
+
+
+
+
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+*::selection {
+  background: $black;
+  color: $white;
+}
+
+body {
+  background: $white;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+// something
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.current {
+  opacity: 1;
+}
+
+// Styling
+
+
+
+
+
+// Contents of Home Page
+
+
+.partBg {
+  width: 100%;
+  padding: 2em;
+  background-color: $grey;
+  margin-bottom: 2em;
+  .wrapper {
+    .partWrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .partOne {
+        font-family: $theHeaderFont;
+        font-size: 2.5em;
+        color: $black;
+      }
+      .partTwo {
+        font-family: $theFont;
+        font-size: 2em;
+        color: $black;
+      }
+    }
+  }
+}
+
+
+// Contact Page
+
+.mainForm {
+  margin-top: 1em;
+  width: 100%;
+  height: 90vh;
+  @include Flex(center, center, column);
+  .formCaption {
+    @include Flex(center, center, column);
+    p {
+      margin-top: 1em;
+    }
+  }
+  .theContact {
+    margin: 1em auto;
+    width: 1200px;
+    @include Flex(space-between, center, row);
+    .contactInfo{
+      flex: 1;
+      background: #000;
+      @include Flex(center, center, column);
+      color: $white;
+      font-family: $theFont;
+      padding: 1em 0 0 0;
+      height: auto;
+      h2 {
+        margin: 1em 0;
+      }
+      .location {
+        width: 100%;
+        height: 100px;
+        margin: 0 auto;
+        background: #fff;
+        border-top-left-radius: 0.3em;
+        border-top-right-radius: 0.3em;
+        overflow: hidden;
+      }
+    }
+    .contactForms{
+      flex: 2;
+      background: #333;
+      height: auto;
+      form {
+        @include Flex(center, center, column);
+        margin: 0.5em 0;
+        width: 100%;
+        height: 100%;
+        input,textarea {
+          margin: 0.5em auto;
+          width: 50%;
+          padding: 1em;
+        }
+        textarea {
+          resize: none;
+        }
+      }
+    }
+  }
+}
